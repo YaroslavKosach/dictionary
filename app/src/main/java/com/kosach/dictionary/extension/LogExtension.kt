@@ -1,4 +1,4 @@
-package com.kosach.dictionary
+package com.kosach.dictionary.extension
 
 import android.util.Log
 

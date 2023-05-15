@@ -1,10 +1,13 @@
-package com.kosach.dictionary
+package com.kosach.dictionary.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.kosach.dictionary.databinding.ActivityMainBinding
+import com.kosach.dictionary.extension.log
 import com.kosach.dictionary.model.CreateWord
+import com.kosach.dictionary.ui.create_word.CreateWordActivity
 import com.kosach.dictionary.use_case.CreateWordUseCase
 import com.kosach.dictionary.utils.Tags.APP_TAG
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,19 +40,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
         binding.fab.setOnClickListener {
-            lifecycleScope.launch {
-                val word = createWordUseCase(CreateWord(
-                    englishValue = "Word",
-                    ukraineValue = "Слово",
-                    description = "-"
-                )).catch {exception ->
-                    "Error".log(APP_TAG, exception)
-                }.collect {word ->
-                    "Result: ${word.id}".log(APP_TAG)
-                }
-            }
+            startActivity(Intent(this, CreateWordActivity::class.java))
         }
 
+
     }
+
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+
 }
