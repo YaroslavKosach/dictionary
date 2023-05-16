@@ -15,7 +15,7 @@ data class WordEntity(
     @ColumnInfo(name = "description") val description: String?,
 
     //Integer
-//    @ColumnInfo("test_min_long", defaultValue = "${0L}") val testMinLong: Long = Long.MIN_VALUE,
+    @ColumnInfo("test_min_long", defaultValue = "${0L}") val testMinLong: Long? = Long.MIN_VALUE,
 //    @ColumnInfo("test_max_long", defaultValue = "${0L}") val testMaxLong: Long = Long.MAX_VALUE,
 //
 //    //Real

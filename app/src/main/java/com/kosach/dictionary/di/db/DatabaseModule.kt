@@ -3,6 +3,7 @@ package com.kosach.dictionary.di.db
 import android.content.Context
 import androidx.room.Room
 import com.kosach.dictionary.database.AppDatabase
+import com.kosach.dictionary.database.MIGRATION_3_4
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,6 +24,7 @@ object DatabaseModule {
             AppDatabase.DATABASE_NAME
         )
 //            .fallbackToDestructiveMigration()
+            .addMigrations(MIGRATION_3_4)
             .build()
     }
 
