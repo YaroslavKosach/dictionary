@@ -25,7 +25,6 @@ class WordRepositoryImp @Inject constructor(
                 description = createWord.description,
             )
         )
-        error(Exception("custom exception"))
         emit(
             Word(
                 id = id,
